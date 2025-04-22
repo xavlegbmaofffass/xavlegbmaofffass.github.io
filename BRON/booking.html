@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="/assets/фавикон.svg">
+  <title>Бронирование билета | Tickets</title>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <img src="/assets/логотип.png" alt="Tickets" class="logo" style="height: 50px;">
+      <nav class="nav-links">
+        <a href="/index.html" class="nav-link">Главная</a>
+        <a href="/AFISHA/index.html" class="nav-link">Афиша</a>
+        <a href="/O_NAS/index.html" class="nav-link">О нас</a>
+        <a href="/KONTAKTY/index.html" class="nav-link">Контакты</a>
+        <a href="/LICHNIY_KABINET/index.html" class="nav-link">Личный кабинет</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <h1>Бронирование билета</h1>
+  </section>
+  <main class="container">
+    <div class="booking-layout">
+      <div class="left-side">
+        <img src="" alt="Афиша мероприятия" class="poster-img" />
+        <div class="detail-row">
+          <span class="detail-label">Дата и время:</span>
+          <span class="detail-value datetime"></span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Место:</span>
+          <span class="detail-value location"></span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Цена:</span>
+          <span class="detail-value price"></span>
+        </div>
+        <button type="button" class="buy-btn" id="buyBtn">Оформить</button>
+      </div>
+      <div class="right-side">
+        <h2 class="artist-name"></h2>
+        <div class="divider"></div>
+        <p class="event-description"></p>
+      </div>
+    </div>
+    <div class="video-section">
+      <h2>Тизер мероприятия</h2>
+      <iframe class="concert_details_video" width="100%" height="360" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </main>
+  <footer>
+    <p>© 2025 Tickets. Have a good rest!</p>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+      fetch("events.xml")
+        .then(res => res.text())
+        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+        .then(data => {
+          const events = data.querySelectorAll("event");
+          let selectedEvent = null;
+          events.forEach(event => {
+            if (event.querySelector("id")?.textContent === id) {
+              selectedEvent = event;
+            }
+          });
+          if (!selectedEvent) return;
+          document.querySelector(".artist-name").textContent = selectedEvent.querySelector("title")?.textContent || "";
+          document.querySelector(".poster-img").src = selectedEvent.querySelector("poster")?.textContent || "";
+          document.querySelector(".detail-value.datetime").textContent = selectedEvent.querySelector("datetime")?.textContent || "";
+          document.querySelector(".detail-value.location").textContent = selectedEvent.querySelector("location")?.textContent || "";
+          document.querySelector(".detail-value.price").textContent = selectedEvent.querySelector("price")?.textContent || "";
+          document.querySelector(".event-description").textContent = selectedEvent.querySelector("description")?.textContent || "";
+          document.querySelector(".concert_details_video").src = selectedEvent.querySelector("video")?.textContent || "";
+        });
+    });
+
+    let buyButton = document.getElementById("buyBtn")
+
+    buyButton.addEventListener("click", function(){
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+      console.log(id)
+      window.location.replace("/OFORMLENIE/order.html?id=" + id)
+    })
+
+  </script>
+</body>
+</html>

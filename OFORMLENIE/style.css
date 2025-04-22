@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Coda&family=Roboto+Slab:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  background-color: #f5e5e7;
+}
+
+header {
+  background-color: #600d0f;
+  color: white;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font: 700 24px "PT Sans", sans-serif;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #f8c8c8;
+}
+
+.hero {
+  background-color: #a52a2a;
+  font: 700 36px "Coda", system-ui;
+  color: white;
+  padding: 6rem 15rem 1rem;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.booking-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.left-side {
+  flex: 1 1 300px;
+}
+
+.poster-img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.detail-row {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.detail-label {
+  font-weight: bold;
+  color: #600d0f;
+  margin-bottom: 0.2rem;
+}
+
+.detail-value {
+  color: #460a0b;
+}
+
+.buy-btn {
+  background-color: #600d0f;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.buy-btn:hover {
+  background-color: #801113;
+}
+
+.right-side {
+  flex: 2 1 600px;
+}
+
+.artist-name {
+  font-size: 2.5rem;
+  color: #600d0f;
+  font-family: 'Coda', serif;
+}
+
+.divider {
+  height: 3px;
+  background-color: #a52a2a;
+  margin: 1rem 0;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #600d0f;
+  font-weight: bold;
+}
+
+.form-section-title {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  color: #600d0f;
+  font-family: 'Coda', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fdfdfd;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #a52a2a;
+  box-shadow: 0 0 4px rgba(165, 42, 42, 0.3);
+  outline: none;
+}
+.form-group label {
+  font-size: 1rem;
+  color: #600d0f;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.sector-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sector-table th,
+.sector-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.sector-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+}
+
+.sector-table tr:hover {
+  background-color: #f0f8ff;
+  cursor: pointer;
+}
+
+.selected-sector {
+  margin-top: 1rem;
+  font-size: 16px;
+  color: #333;
+  background: #f9f9f9;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+h3{
+  text-align: center;
+  margin-top: 1rem;
+}
+.sector-map{
+  width: 100%;
+}
+footer {
+  position: relative;
+  align-items: center;
+  display: flex;
+  padding-left: 5%;
+  height: 80px;
+  background: #600d0f;
+  font: italic 36px "PT Sans", sans-serif;
+  color: #ffffff;
+}
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 1rem 2rem;
+    font-size: 28px;
+  }
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .nav-link {
+    font-size: 18px;
+  }
+  .booking-layout {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .left-side, .right-side {
+    flex: 1 1 100%;
+  }
+  .artist-name {
+    font-size: 2rem;
+  }
+  .sector-selection-layout {
+    flex-direction: column;
+  }
+  footer {
+    font-size: 24px;
+    justify-content: center;
+    padding-left: 0;
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  .hero {
+    padding: 11rem 1rem 1.5rem;
+    font-size: 24px;
+  }
+  .buy-btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+  .artist-name {
+    font-size: 1.5rem;
+  }
+  footer {
+    font-size: 20px;
+    height: 60px;
+  }
+}

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<orders>
+  <order>
+    <id>1</id>
+    <title>MACAN</title>
+    <poster>/assets/макан.png</poster>
+    <date>03.05.2025</date>
+    <location>ГКСУ "Чижовка-Арена", Минск</location>
+    <map>/assets/чижовка.png</map>
+		 <sectors>
+			<sector>
+				<name>СЕКТОР 105</name>
+				<price>250</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР 106</name>
+				<price>210</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР 107</name>
+				<price>190</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР 108</name>
+				<price>180</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР 201</name>
+				<price>190</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР 202</name>
+				<price>190</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР 203</name>
+				<price>210</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР 204</name>
+				<price>250</price> 
+			</sector>
+			<sector>
+				<name>ТАНЦПОЛ</name>
+				<price>150</price> 
+			</sector>
+    </sectors>
+  </order>
+  <order>
+    <id>2</id>
+    <title>GUF</title>
+    <poster>/assets/гуф.jpeg</poster>
+    <date>07.06.2025</date>
+    <location>Falcon Club Arena, Минск</location>
+    <map>/assets/falconclub.png</map>
+    <sectors>
+			<sector>
+				<name>ТАНЦПОЛ</name>
+				<price>200</price> 
+			</sector>
+			<sector>
+				<name>ФАНЗОНА</name>
+				<price>250</price> 
+			</sector>
+    </sectors>
+  </order>
+	  <order>
+    <id>3</id>
+    <title>OG BUDA</title>
+    <poster>/assets/буда.jpeg</poster>
+    <date>29.05.2025</date>
+    <location>Falcon Club Arena, Минск</location>
+    <map>/assets/falconclub.png</map>
+    <sectors>
+			<sector>
+				<name>СЕКТОР 204</name>
+				<price>180</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР 205</name>
+				<price>180</price> 
+			</sector>
+			<sector>
+				<name>ТАНЦПОЛ</name>
+				<price>150</price> 
+			</sector>
+    </sectors>
+  </order>
+	  <order>
+    <id>4</id>
+    <title>Ромео и Джульетта</title>
+    <poster>/assets/romeo.jpg</poster>
+    <date>15.05.2025</date>
+    <location>Драматический театр Белорусской армии, Минск</location>
+		<map>/assets/драмтеатр.png</map>
+    <sectors>
+			<sector>
+				<name>БАЛКОН</name>
+				<price>18</price> 
+			</sector>
+			<sector>
+				<name>ПАРТЕР</name>
+				<price>28</price> 
+			</sector>
+    </sectors>
+  </order>
+	  <order>
+    <id>5</id>
+    <title>belbet fest</title>
+    <poster>/assets/belbet.jpg</poster>
+    <date>14.06.2025</date>
+    <location>Стадион "Динамо", Минск</location>
+    <map>/assets/динамо.png</map>
+    <sectors>
+			<sector>
+				<name>СЕКТОР A01</name>
+				<price>144</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР A02</name>
+				<price>164</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР A03</name>
+				<price>180</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР A05</name>
+				<price>280</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР A06</name>
+				<price>330</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР A29</name>
+				<price>100</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР C20</name>
+				<price>336</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР C21</name>
+				<price>286</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР C22</name>
+				<price>210</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР D24</name>
+				<price>160</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР D25</name>
+				<price>145</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР D26</name>
+				<price>105</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР D27</name>
+				<price>105</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР D28</name>
+				<price>105</price> 
+			</sector>
+			<sector>
+				<name>ТАНЦПОЛ</name>
+				<price>180</price> 
+			</sector>
+			<sector>
+				<name>ФАНЗОНА</name>
+				<price>220</price> 
+			</sector>
+    </sectors>
+  </order>
+	  <order>
+    <id>6</id>
+    <title>РУКИ ВВЕРХ!</title>
+    <poster>/assets/руки.jpg</poster>
+    <date>03.06.2025</date>
+    <location>Минск-Арена, Минск</location>
+    <map>/assets/минскарена.png</map>
+    <sectors>
+			<sector>
+				<name>ТАНЦПОЛ</name>
+				<price>110</price> 
+			</sector>
+			<sector>
+				<name>ФАНЗОНА</name>
+				<price>280</price> 
+			</sector>
+    </sectors>
+  </order>
+	  <order>
+    <id>7</id>
+    <title>Дискотека СССР</title>
+    <poster>/assets/дискотека.jpeg</poster>
+    <date>09.08.2025</date>
+    <location>Минск-Арена, Минск</location>
+    <map>/assets/минскарена.png</map>
+    <sectors>
+			<sector>
+				<name>ТРИБУНА А. СЕКТОР L</name>
+				<price>70</price> 
+			</sector>
+			<sector>
+				<name>ТРИБУНА В. СЕКТОР В</name>
+				<price>125</price> 
+			</sector>
+			<sector>
+				<name>ТРИБУНА D. СЕКТОР CH</name>
+				<price>111</price> 
+			</sector>
+			<sector>
+				<name>ТРИБУНА D. СЕКТОР I</name>
+				<price>80</price> 
+			</sector>
+			<sector>
+				<name>ТРИБУНА D. СЕКТОР L</name>
+				<price>70</price> 
+			</sector>
+			<sector>
+				<name>ТРИБУНА D. СЕКТОР N</name>
+				<price>70</price> 
+			</sector>
+			<sector>
+				<name>ФАНЗОНА</name>
+				<price>200</price> 
+			</sector>
+    </sectors>
+  </order>
+	  <order>
+    <id>8</id>
+    <title>Вячеслав Бутусов</title>
+    <poster>/assets/наутилус.jpeg</poster>
+    <date>28.05.2025</date>
+    <location>Falcon Club Arena, Минск</location>
+    <map>/assets/falconclub.png</map>
+    <sectors>
+			<sector>
+				<name>ПАРТЕР 1</name>
+				<price>370</price> 
+			</sector>
+			<sector>
+				<name>ПАРТЕР 2</name>
+				<price>370</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР 102</name>
+				<price>270</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР 106</name>
+				<price>160</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР 108</name>
+				<price>160</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР 110</name>
+				<price>160</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР 111</name>
+				<price>270</price> 
+			</sector>
+			<sector>
+				<name>СЕКТОР 207</name>
+				<price>270</price> 
+			</sector>
+    </sectors>
+  </order>
+	  <order>
+    <id>9</id>
+    <title>В стиле РОК</title>
+    <poster>/assets/рок.jpeg</poster>
+    <date>11.06.2025</date>
+    <location>Falcon Club Arena, Минск</location>
+    <map>/assets/дом.png</map>
+    <sectors>
+			<sector>
+				<name>БАЛКОН</name>
+				<price>50</price> 
+			</sector>
+			<sector>
+				<name>ПАРТЕР</name>
+				<price>800</price> 
+			</sector>
+    </sectors>
+  </order>
+</orders>

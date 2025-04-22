@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="/assets/фавикон.svg">
+  <title>Оформление билета | Tickets</title>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <img src="/assets/логотип.png" alt="Tickets" class="logo" style="height: 50px;">
+      <nav class="nav-links">
+        <a href="/index.html" class="nav-link">Главная</a>
+        <a href="/AFISHA/index.html" class="nav-link">Афиша</a>
+        <a href="/O_NAS/index.html" class="nav-link">О нас</a>
+        <a href="/KONTAKTY/index.html" class="nav-link">Контакты</a>
+        <a href="/LICHNIY_KABINET/index.html" class="nav-link">Личный кабинет</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <h1>Оформление билета</h1>
+  </section>
+  <main class="container">
+    <div class="booking-layout">
+      <div class="left-side">
+        <img src="" alt="Афиша события" class="poster-img" />
+        <div class="detail-row">
+          <span class="detail-label">Событие:</span>
+          <span class="detail-value title"></span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Дата:</span>
+          <span class="detail-value date"></span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Место:</span>
+          <span class="detail-value location"></span>
+        </div>
+      </div>
+      <div class="right-side">
+        <img src="" alt="Схема зала" class="sector-map">
+        <h3>Выберите сектор</h3>
+        <table class="sector-table">
+          <thead>
+            <tr><th>Сектор</th><th>Цена (р.)</th></tr>
+          </thead>
+          <tbody id="sector-table-body"></tbody>
+        </table>
+        <div class="selected-sector">
+          Выбранный сектор: <strong id="selected-sector-text">не выбран</strong><br>
+          Итоговая сумма: <strong id="total-price">0 р.</strong>
+        </div>
+        <h2 class="artist-name">Введите ваши данные</h2>
+        <div class="divider"></div>
+        <form class="order-form">
+          <div class="form-group">
+            <label for="fullname">ФИО</label>
+            <input type="text" id="fullname" name="fullname" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="tickets">Количество билетов</label>
+            <select id="tickets" name="tickets">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </div>
+          <h3 class="form-section-title">Данные карты</h3>
+          <div class="form-group">
+            <label for="cardNumber">Номер карты</label>
+            <input type="text" id="cardNumber" name="cardNumber" inputmode="numeric" maxlength="19" placeholder="0000 0000 0000 0000" required />
+          </div>
+          <div class="form-group">
+            <label for="cardName">Имя владельца (как на карте)</label>
+            <input type="text" id="cardName" name="cardName" placeholder="IVAN IVANOV" required />
+          </div>
+          <div class="form-group" style="display: flex; gap: 1rem;">
+            <div style="flex: 1;">
+              <label for="expDate">Срок действия</label>
+              <input type="text" id="expDate" name="expDate" placeholder="MM/YY" required />
+            </div>
+            <div style="flex: 1;">
+              <label for="cvv">CVV</label>
+              <input type="password" id="cvv" name="cvv" maxlength="4" required />
+            </div>
+          </div>
+          <input type="hidden" name="sector" id="selected-sector-hidden" />
+          <button type="submit" class="buy-btn">Подтвердить и оплатить</button>   
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>© 2025 Tickets. Have a good rest!</p>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const id = new URLSearchParams(window.location.search).get("id");
+      let sectors = []
+      fetch("orders.xml")
+        .then(res => res.text())
+        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+        .then(data => {
+          const order = Array.from(data.querySelectorAll("order"))
+            .find(o => o.querySelector("id").textContent === id);
+          if (!order) return;
+          document.querySelector(".poster-img").src = order.querySelector("poster").textContent;
+          document.querySelector(".title").textContent = order.querySelector("title").textContent;
+          document.querySelector(".date").textContent = order.querySelector("date").textContent;
+          document.querySelector(".location").textContent = order.querySelector("location").textContent;
+          document.querySelector(".sector-map").src = order.querySelector("map").textContent;
+          const sectorsNode = order.querySelector("sectors");
+            if (sectorsNode) {
+                const sectors = Array.from(sectorsNode.querySelectorAll("sector")).map(sector => ({
+                    name: sector.querySelector("name").textContent.trim(),
+                    price: sector.querySelector("price").textContent.trim()
+                }));
+
+                // Переносим сюда весь код работы с таблицей
+                const tableBody = document.getElementById("sector-table-body");
+                const selectedSectorText = document.getElementById("selected-sector-text");
+                const selectedSectorHidden = document.getElementById("selected-sector-hidden");
+                const ticketCountSelect = document.getElementById("tickets");
+                const totalPriceEl = document.getElementById("total-price");
+                let selectedPrice = 0;
+
+                sectors.forEach(sector => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `<td>${sector.name}</td><td>${sector.price}</td>`;
+                    row.addEventListener("click", () => {
+                        selectedSectorText.textContent = sector.name;
+                        selectedSectorHidden.value = sector.name;
+                        selectedPrice = parseInt(sector.price) || 0; // Конвертируем в число
+                        updateTotal();
+                    });
+                    tableBody.appendChild(row);
+                });
+
+                // Функция обновления должна быть объявлена внутри этой области видимости
+                function updateTotal() {
+                    const ticketCount = parseInt(ticketCountSelect.value) || 0;
+                    totalPriceEl.textContent = selectedPrice * ticketCount;
+                }
+
+                // Инициализируем обновление при изменении количества билетов
+                ticketCountSelect.addEventListener("change", updateTotal);
+            }
+        })
+      function updateTotal() {
+        const count = parseInt(ticketCountSelect.value);
+        const total = selectedPrice * count;
+        totalPriceEl.textContent = total + " р.";
+      }
+    });
+    document.querySelector(".order-form").addEventListener("submit", (e) => {
+      e.preventDefault(); // предотвращаем стандартную отправку формы
+      alert("Ваш билет успешно оформлен. Информация о билете придет вам на почту");
+    });
+  </script>
+</body>
+</html>
