@@ -120,5 +120,6 @@ document.querySelector('form').addEventListener('submit', function (e) {
   
     if (isValid) {
       alert('С вами скоро свяжутся!');
+      location.reload();
     }
 });
