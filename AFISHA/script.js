@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const categoryItems = document.querySelectorAll(".category-item");
   const categoryButton = document.querySelector(".filter-button span");
 
-  fetch("events.xml")
+  fetch("./events.xml")
     .then((response) => response.text())
     .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
     .then((data) => {
