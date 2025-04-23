@@ -82,73 +82,70 @@ header {
     color: black;
     margin-top: 9.5px;
 }
-.contact-form {
-    width: 730px;
-    padding: 29px 0 26px;
-    background: #f2eeee;
-    border: 3px solid rgba(170, 170, 170, 0.2);
-    margin: 0 auto;
-    max-width: 100%;
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 10%;
 }
-.form-title {
-    font-size: 35px;
-    color: #414141;
-    text-align: center;
-    margin: 0 0 20px;
+
+.contact-section {
+    flex: 1 1 400px; 
+    background-color: rgba(165, 42, 42, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
 }
-.form-group {
-    margin: 0 27px 15px;
-}
-.form-label {
-    font-size: 30px;
-    color: #323236;
-    display: block;
-    margin-bottom: 5px;
-}
-.form-input {
-    width: 100%;
-    height: 45px;
-    padding-left: 28px;
-    font: 400 20px "PT Sans", sans-serif;
-    color: #90a4ae;
-    background: white;
-    border: 2px solid #90a4ae;
-    box-sizing: border-box;
-}
-.submit-btn {
-    width: 190px;
-    height: 50px;
-    color: white;
-    font-size: 33px;
-    background-color: #600d0f;
-    border: black 1px;
-    border-radius: 50px;
-    margin: 21px auto 0;
-    display: block;
-    cursor: pointer;
-    transition: all 0.3s ease; 
-}
-.submit-btn:hover {
-    background-color: #8a1c1e; 
-    transform: scale(1.05); 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
-}
+
 .contact-image {
-    width: 583px;
-    height: 341px;
+    flex: 1 1 300px;
+    width: 100%;
+    max-width: 583px;
+    height: auto;
     border: 3px solid rgba(0, 0, 0, 0.05);
     border-radius: 40px;
     object-fit: cover;
-    max-width: 100%;
 }
-.contact-section {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin: 38px auto;
-    max-width: 1587px;
-    flex-wrap: wrap;
-    padding: 0 20px;
+.title {
+    font-family: 'Coda', serif;
+    font-size: 2rem;
+    color: #600d0f;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-label {
+    display: block;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.1rem;
+    color: #600d0f;
+    margin-bottom: 0.5rem;
+}
+.form-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #600d0f;
+    border-radius: 5px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1rem;
+}
+.submit-btn {
+    background-color: #600d0f;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+.submit-btn:hover {
+    background-color: #801113;
 }
 footer {
     position: relative;
@@ -210,7 +207,7 @@ footer {
         gap: 0.5rem 1rem;
     }
     .hero {
-        padding: 10rem 1rem 1.5rem;
+        padding: 9rem 1rem 1.5rem;
     }
     .kontakts {
         flex-direction: column;
@@ -241,9 +238,10 @@ footer {
         padding-left: 15px;
     }
     .submit-btn {
-        width: 140px;
-        height: 40px;
-        font-size: 24px;
+        width: 200px;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+        border-radius: 30px;
     }
     .contact-section {
         gap: 20px;

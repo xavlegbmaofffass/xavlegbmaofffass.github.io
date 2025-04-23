@@ -94,3 +94,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     initCarousel();
 });
+document.querySelector('form').addEventListener('submit', function (e) {
+    e.preventDefault(); 
+  
+    const nameInput = document.getElementById('name');
+    const phoneInput = document.getElementById('phone');
+  
+    const nameValue = nameInput.value.trim();
+    const phoneValue = phoneInput.value.trim();
+  
+    const nameRegex = /^[А-Яа-яЁёA-Za-z\s\-]+$/;
+    const phoneRegex = /^\+375\d{9}$/;
+  
+    let isValid = true;
+  
+    if (!nameRegex.test(nameValue)) {
+      alert('Имя должно содержать только буквы, пробелы или тире.');
+      isValid = false;
+    }
+  
+    if (!phoneRegex.test(phoneValue)) {
+      alert('Номер телефона должен быть в формате +375xxxxxxxxx');
+      isValid = false;
+    }
+  
+    if (isValid) {
+      alert('С вами скоро свяжутся!');
+    }
+});

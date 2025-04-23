@@ -19,7 +19,6 @@
             <a href="/AFISHA/index.html" class="nav-link">Афиша</a>
             <a href="/O_NAS/index.html" class="nav-link">О нас</a>
             <a href="/KONTAKTY/index.html" class="nav-link">Контакты</a>
-            <a href="/LICHNIY_KABINET/index.html" class="nav-link">Личный кабинет</a>
         </nav>
       </div>
   </header>
@@ -48,23 +47,55 @@
         <p class="contact-value">г. Минск, ул. Свердлова 13а</p>
       </div>
     </div>
-    <div class="contact-section">
-      <form class="contact-form">
-        <p class="form-title">Связаться с нами</p>
-        <div class="form-group">
-          <label class="form-label">Ваше имя</label>
-          <input type="text" class="form-input" placeholder="Введите ваше имя">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Номер телефона</label>
-          <input type="tel" class="form-input" placeholder="Введите номер телефона">
-        </div>
-        <button type="submit" class="submit-btn">Отправить</button>
-      </form>
-      <img src="/assets/карта.png" class="contact-image">
+    <div class="contact-container">
+      <section class="contact-section">
+        <h2 class="title">Связаться с нами</h2>
+        <form>
+          <div class="form-group">
+            <label for="name" class="form-label">Ваше имя</label>
+            <input type="text" id="name" class="form-input" placeholder="Введите ваше имя">
+          </div>
+          <div class="form-group">
+            <label for="phone" class="form-label">Номер телефона</label>
+            <input type="tel" id="phone" class="form-input" placeholder="Введите ваш номер телефона">
+          </div>
+          <button type="submit" class="submit-btn">Отправить запрос</button>
+        </form>
+      </section>
+      <img src="/assets/карта.png" class="contact-image" alt="Карта">
     </div>
     <footer>
       <p>© 2025 Tickets. Have a good rest!</p>
     </footer>
+    <script>
+      document.querySelector('form').addEventListener('submit', function (e) {
+        e.preventDefault();
+      
+        const nameInput = document.getElementById('name');
+        const phoneInput = document.getElementById('phone');
+      
+        const nameValue = nameInput.value.trim();
+        const phoneValue = phoneInput.value.trim();
+      
+        const nameRegex = /^[А-Яа-яЁёA-Za-z\s\-]+$/;
+        const phoneRegex = /^\+375\d{9}$/;
+      
+        let isValid = true;
+      
+        if (!nameRegex.test(nameValue)) {
+          alert('Имя должно содержать только буквы, пробелы или тире.');
+          isValid = false;
+        }
+      
+        if (!phoneRegex.test(phoneValue)) {
+          alert('Номер телефона должен быть в формате +375xxxxxxxxx');
+          isValid = false;
+        }
+      
+        if (isValid) {
+          alert('Скоро с вами свяжутся!');
+        }
+      });
+      </script>      
   </body>
 </html>

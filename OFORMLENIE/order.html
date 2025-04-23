@@ -16,7 +16,6 @@
         <a href="/AFISHA/index.html" class="nav-link">Афиша</a>
         <a href="/O_NAS/index.html" class="nav-link">О нас</a>
         <a href="/KONTAKTY/index.html" class="nav-link">Контакты</a>
-        <a href="/LICHNIY_KABINET/index.html" class="nav-link">Личный кабинет</a>
       </nav>
     </div>
   </header>
@@ -154,16 +153,66 @@
                 ticketCountSelect.addEventListener("change", updateTotal);
             }
         })
-      function updateTotal() {
-        const count = parseInt(ticketCountSelect.value);
-        const total = selectedPrice * count;
-        totalPriceEl.textContent = total + " р.";
-      }
-    });
-    document.querySelector(".order-form").addEventListener("submit", (e) => {
-      e.preventDefault(); // предотвращаем стандартную отправку формы
-      alert("Ваш билет успешно оформлен. Информация о билете придет вам на почту");
-    });
+        document.querySelector(".order-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      return; // Если есть ошибки, не продолжаем
+    }
+
+    alert("Ваш билет успешно оформлен. Информация о билете придет вам на почту");
+    location.reload();
+  });
+
+  function validateForm() {
+    const fullname = document.getElementById("fullname").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const cardNumber = document.getElementById("cardNumber").value.replace(/\s/g, '');
+    const cardName = document.getElementById("cardName").value.trim();
+    const expDate = document.getElementById("expDate").value.trim();
+    const cvv = document.getElementById("cvv").value.trim();
+
+    const nameRegex = /^[А-Яа-яЁёA-Za-z\s\-]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\+375\d{9}$/;
+    const cardRegex = /^\d{16}$/;
+    const cardNameRegex = /^[A-Z]+\s[A-Z]+$/;
+    const expRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+    const cvvRegex = /^\d{3,4}$/;
+
+    if (!nameRegex.test(fullname)) {
+      alert("Введите корректное ФИО (только буквы, пробелы и дефис).");
+      return false;
+    }
+
+    if (!emailRegex.test(email)) {
+      alert("Введите корректный email.");
+      return false;
+    }
+
+    if (!cardRegex.test(cardNumber)) {
+      alert("Введите корректный номер карты (16 цифр, без пробелов).");
+      return false;
+    }
+
+    if (!cardNameRegex.test(cardName)) {
+      alert("Имя владельца карты должно быть в формате: IVANOV IVAN.");
+      return false;
+    }
+
+    if (!expRegex.test(expDate)) {
+      alert("Введите срок действия карты в формате MM/YY.");
+      return false;
+    }
+
+    if (!cvvRegex.test(cvv)) {
+      alert("Введите корректный CVV (3 или 4 цифры).");
+      return false;
+    }
+
+    return true;
+  }
+});
   </script>
 </body>
 </html>

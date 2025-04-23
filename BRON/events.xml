@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <events>
-  <event>
+  <event category='music'>
     <id>1</id>
     <title>MACAN</title>
     <poster>/assets/макан.png</poster>
@@ -16,7 +16,7 @@
     </description>
     <video>https://www.youtube.com/embed/u4p9w7zQejA</video>
   </event>
-  <event>
+  <event category='music'>
     <id>2</id>
     <title>GUF</title>
     <poster>/assets/гуф.jpeg</poster>
@@ -31,7 +31,7 @@
     </description>
     <video>https://www.youtube.com/embed/DzCvbzb4eAM</video>
   </event>
-  <event>
+  <event category='music'>
     <id>3</id>
     <title>OG BUDA</title>
     <poster>/assets/буда.jpeg</poster>
@@ -43,7 +43,7 @@
     </description>
     <video>https://www.youtube.com/embed/J67HMDK6rMQ</video>
   </event>
-  <event>
+  <event category='theater'>
     <id>4</id>
     <title>Ромео и Джульетта</title>
     <poster>/assets/romeo.jpg</poster>
@@ -66,7 +66,7 @@
     </description>
     <video>https://www.youtube.com/embed/MhN-DC-XjwM</video>
   </event>
-  <event>
+  <event category='festivals'>
     <id>5</id>
     <title>belbet fest</title>
     <poster>/assets/belbet.jpg</poster>
@@ -94,7 +94,7 @@
     </description>
     <video>https://www.youtube.com/embed/YBbnD7aHL18</video>
   </event>
-  <event>
+  <event category='music'>
     <id>6</id>
     <title>РУКИ ВВЕРХ!</title>
     <poster>/assets/руки.jpg</poster>
@@ -113,7 +113,7 @@
     </description>
     <video>https://www.youtube.com/embed/w-M9RQuIt0I</video>
   </event>
-  <event>
+  <event category='festivals'>
     <id>7</id>
     <title>Дискотека СССР</title>
     <poster>/assets/дискотека.jpeg</poster>
@@ -142,7 +142,7 @@
     </description>
     <video>https://www.youtube.com/embed/ugahxq9YIbM</video>
   </event>
-  <event>
+  <event category='music'>
     <id>8</id>
     <title>Вячеслав Бутусов: Nautilus Pompilius - лучшее</title>
     <poster>/assets/наутилус.jpeg</poster>
@@ -157,7 +157,7 @@
     </description>
     <video>https://www.youtube.com/embed/q2qbgzBZJGk</video>
   </event>
-  <event>
+  <event category='festivals'>
     <id>9</id>
     <title>Концерт В СТИЛЕ РОК 2. РУССКИЙ РОК</title>
     <poster>/assets/рок.jpeg</poster>
