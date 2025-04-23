@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const eventList = document.querySelector(".event-list");
   const categoryItems = document.querySelectorAll(".category-item");
+  const categoryButton = document.querySelector(".category-button"); // Кнопка для отображения выбранной категории
 
   fetch("events.xml")
     .then((response) => response.text())
@@ -40,15 +41,29 @@ document.addEventListener("DOMContentLoaded", () => {
           const selectedCategory = this.getAttribute("data-category");
           const allCards = document.querySelectorAll(".event-card");
 
+          console.log("Выбрана категория:", selectedCategory); 
+
           categoryItems.forEach((i) => i.classList.remove("active"));
           this.classList.add("active");
 
+          if (selectedCategory === "all") {
+            categoryButton.textContent = "Категория";
+          } else {
+            categoryButton.textContent = this.textContent;
+          }
+
+          console.log("Все карточки перед фильтрацией:", allCards);
+
           allCards.forEach((card) => {
             const cardCategory = card.getAttribute("data-category");
+            console.log("Карточка с категорией:", cardCategory);
+
             if (selectedCategory === "all" || cardCategory === selectedCategory) {
-              card.style.display = "";
+              card.classList.remove("hidden");
+              console.log("Показываем карточку:", card);
             } else {
-              card.style.display = "none";
+              card.classList.add("hidden");
+              console.log("Скрываем карточку:", card);
             }
           });
         });

@@ -12,7 +12,9 @@
 <body>
     <header>
         <div class="nav-container">
-            <img src="/assets/логотип.png" alt="Tickets" class="logo">
+            <a href="/index.html">
+                <img src="/assets/логотип.png" alt="Tickets" class="logo">
+            </a>
             <nav class="nav-links">
                 <a href="/index.html" class="nav-link">Главная</a>
                 <a href="/AFISHA/index.html" class="nav-link">Афиша</a>
@@ -25,25 +27,26 @@
         <h1 class="hero-title">Афиша мероприятий</h1>
     </section>
     <main class="container">
-      <div class="filter-bar">
-        <h2 class="filter-title">Выберите тематику мероприятия</h2>
-        <div class="filter-controls">
-            <div class="filter-dropdown">
+        <div class="filter-bar">
+            <h2 class="filter-title">Выберите тематику мероприятия</h2>
+            <div class="filter-controls">
+              <div class="filter-dropdown">
                 <button class="filter-button">
-                    <span>Категории</span>
-                    <svg class="filter-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                  <span class="category-button">Категории</span>  <!-- Здесь будет отображаться выбранная категория -->
+                  <svg class="filter-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
                 </button>
                 <div class="dropdown-content">
-                    <a class="category-item active" data-category="all">Все мероприятия</a>
-                    <a class="category-item" data-category="festivals">Фестивали</a>
-                    <a class="category-item" data-category="theater">Театр</a>
-                    <a class="category-item" data-category="music">Музыка</a>
+                  <a class="category-item active" data-category="all">Все мероприятия</a>
+                  <a class="category-item" data-category="festivals">Фестивали</a>
+                  <a class="category-item" data-category="theater">Театр</a>
+                  <a class="category-item" data-category="music">Музыка</a>
                 </div>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
+          
         <div class="events-grid">
             <article class="event-card" data-category="music">
                 <img src="/assets/макан.png" alt="MACAN" class="event-image">
