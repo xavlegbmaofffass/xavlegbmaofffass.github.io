@@ -99,12 +99,15 @@ document.querySelector('form').addEventListener('submit', function (e) {
   
     const nameInput = document.getElementById('name');
     const phoneInput = document.getElementById('phone');
+    const emailInput = document.getElementById("email");
   
     const nameValue = nameInput.value.trim();
     const phoneValue = phoneInput.value.trim();
+    const emailValue = emailInput.value.trim();
   
     const nameRegex = /^[А-Яа-яЁёA-Za-z\s\-]+$/;
     const phoneRegex = /^\+375\d{9}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   
     let isValid = true;
   
@@ -116,6 +119,11 @@ document.querySelector('form').addEventListener('submit', function (e) {
     if (!phoneRegex.test(phoneValue)) {
       alert('Номер телефона должен быть в формате +375xxxxxxxxx');
       isValid = false;
+    }
+
+    if (!emailRegex.test(email)) {
+        alert("Введите корректный email.");
+        return false;
     }
   
     if (isValid) {

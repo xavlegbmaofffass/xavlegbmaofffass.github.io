@@ -47,9 +47,11 @@ header {
     background-color: #a52a2a;
     font: 700 36px "Coda", system-ui;
     color: white;
-    padding: 8rem 1rem 2rem;
+    padding: 7rem 1rem 2rem;
     text-align: center;
-    margin-bottom: 2rem;
+}
+.hero h4{
+    font-family: 'PT Sans', serif;
 }
 .container {
     max-width: 1200px;
@@ -143,7 +145,7 @@ header {
     gap: 2rem;
 }
 .event-card {
-    background-color: #a52a2a90;
+    background-color: rgba(165, 42, 42, 0.2);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -161,7 +163,7 @@ header {
     position: relative;
 }
 .event-name {
-    font-family: 'Coda', serif;
+    font-family: 'PT Sans', sans-serif;
     font-size: 1.8rem;
     color: #600d0f;
     margin-bottom: 1rem;
@@ -216,11 +218,10 @@ header {
     margin-top: 3rem;
 }
 .contact-title {
-    font-family: 'Coda', serif;
+    font-family: 'Coda', sans-serif;
     font-size: 2rem;
     color: #600d0f;
     text-align: center;
-    margin-bottom: 2rem;
 }
 .form-group {
     margin-bottom: 1.5rem;

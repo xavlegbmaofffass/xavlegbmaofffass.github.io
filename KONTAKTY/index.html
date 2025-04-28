@@ -51,53 +51,67 @@
     </div>
     <div class="contact-container">
       <section class="contact-section">
-        <h2 class="title">Связаться с нами</h2>
+        <h2 class="contact-title">Связаться с нами</h2>
         <form>
-          <div class="form-group">
-            <label for="name" class="form-label">Ваше имя</label>
-            <input type="text" id="name" class="form-input" placeholder="Введите ваше имя">
-          </div>
-          <div class="form-group">
-            <label for="phone" class="form-label">Номер телефона</label>
-            <input type="tel" id="phone" class="form-input" placeholder="Введите ваш номер телефона">
-          </div>
-          <button type="submit" class="submit-btn">Отправить запрос</button>
+            <div class="form-group">
+                <label for="name" class="form-label">Ваше имя</label>
+                <input type="text" id="name" class="form-input" placeholder="Введите ваше имя">
+            </div>
+            <div class="form-group">
+                <label for="phone" class="form-label">Номер телефона</label>
+                <input type="tel" id="phone" class="form-input" placeholder="Введите ваш номер телефона">
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label">Ваш email</label>
+                <input type="email" id="email" class="form-input" placeholder="Введите вашу почту">
+            </div>
+            <button type="submit" class="submit-btn">Отправить запрос</button>
         </form>
-      </section>
+    </section>
+    <a href="https://maps.app.goo.gl/3nt3HXNky16AhSuFA">
       <img src="/assets/карта.png" class="contact-image" alt="Карта">
+    </a>
     </div>
     <footer>
       <p>© 2025 Tickets. Have a good rest!</p>
     </footer>
     <script>
       document.querySelector('form').addEventListener('submit', function (e) {
-        e.preventDefault();
-      
-        const nameInput = document.getElementById('name');
-        const phoneInput = document.getElementById('phone');
-      
-        const nameValue = nameInput.value.trim();
-        const phoneValue = phoneInput.value.trim();
-      
-        const nameRegex = /^[А-Яа-яЁёA-Za-z\s\-]+$/;
-        const phoneRegex = /^\+375\d{9}$/;
-      
-        let isValid = true;
-      
-        if (!nameRegex.test(nameValue)) {
-          alert('Имя должно содержать только буквы, пробелы или тире.');
-          isValid = false;
-        }
-      
-        if (!phoneRegex.test(phoneValue)) {
-          alert('Номер телефона должен быть в формате +375xxxxxxxxx');
-          isValid = false;
-        }
-      
-        if (isValid) {
-          alert('Скоро с вами свяжутся!');
-          location.reload();
-        }
+          e.preventDefault(); 
+
+          const nameInput = document.getElementById('name');
+          const phoneInput = document.getElementById('phone');
+          const emailInput = document.getElementById("email");
+
+          const nameValue = nameInput.value.trim();
+          const phoneValue = phoneInput.value.trim();
+          const emailValue = emailInput.value.trim();
+
+          const nameRegex = /^[А-Яа-яЁёA-Za-z\s\-]+$/;
+          const phoneRegex = /^\+375\d{9}$/;
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          let isValid = true;
+
+          if (!nameRegex.test(nameValue)) {
+            alert('Имя должно содержать только буквы, пробелы или тире.');
+            isValid = false;
+          }
+        
+          if (!phoneRegex.test(phoneValue)) {
+            alert('Номер телефона должен быть в формате +375xxxxxxxxx');
+            isValid = false;
+          }
+        
+          if (!emailRegex.test(email)) {
+              alert("Введите корректный email.");
+              return false;
+          }
+        
+          if (isValid) {
+            alert('С вами скоро свяжутся!');
+            location.reload();
+          }
       });
       </script>      
   </body>
